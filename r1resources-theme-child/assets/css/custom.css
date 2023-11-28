@@ -1,0 +1,441 @@
+/*--------------------------------------------------------------
+This is your custom stylesheet.
+
+Add your own styles here to make theme updates easier.
+To override any styles from other stylesheets, simply copy them into here and edit away.
+
+Make sure to respect the media queries! Otherwise you may
+accidentally add desktop styles to the mobile layout.
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+--------------------------------------------------------------*/
+/* --- FRESHY CSS --- */
+/* -- GENERAL -- */
+body {
+	background-color: #f5f5f5 !important;
+}
+
+body .site-header {
+    background-color: #f5f5f5;
+	box-shadow: none;
+}
+
+.sticky-header .site-header {
+	box-shadow: none;
+}
+
+body .container {
+    max-width: 100%;
+}
+
+/* typography */
+.bb-custom-typo h1, .bb-custom-typo .h1, .bb-custom-typo h2, .bb-custom-typo .h2, .bb-custom-typo h3, .bb-custom-typo .h3, .bb-custom-typo h4, .bb-custom-typo .h4, .bb-custom-typo h5, .bb-custom-typo .h5, .bb-custom-typo h6, .bb-custom-typo .h6, .bb-custom-typo .bb-course-footer, .bb-custom-typo .ld-table-list-header .ld-text, .bb-custom-typo .gamipress-achievement-points, .bb-custom-typo .vjs-modal-dialog-content {
+	font-family: "Poppins",Sans-serif !important;
+}
+
+/* no margin top on headings */
+.stk-block-heading.no-margin-top h1,
+.stk-block-heading.no-margin-top h2,
+.stk-block-heading.no-margin-top h3,
+.stk-block-heading.no-margin-top h4,
+.stk-block-heading.no-margin-top h5,
+.stk-block-heading.no-margin-top h6 {
+	margin-top: 0;
+}
+
+@media (max-width: 767px) {
+	/* use the "stacked-flex" class on a ROW to make it be flexbox when stacked, to help with adjusting order of stacked columns */
+	.stacked-flex {
+		display: flex;
+		flex-wrap: wrap; 
+	}
+	/* add the desired class to COLUMNS to designate their order when stacked within a "stacked-flex" ROW */
+	.stacked-order-1 {
+		order: 1;
+	}
+	.stacked-order-2 {
+		order: 2;
+	}
+	.stacked-order-3 {
+		order: 3;
+	}
+	.stacked-order-4 {
+		order: 4;
+	}
+	/* adds margin to former "last" column that otherwise wouldn't have it */
+	.stacked-flex:last-child .et_pb_column:last-child {
+		margin-bottom: 30px;
+	}
+}
+
+/* -- NAVIGATION -- */
+#primary-navbar {
+	justify-content: center;
+}
+
+.primary-menu > li > a {
+	font-weight: 500;
+	font-family: "Poppins",Sans-serif !important;
+	font-size: 16px;
+}
+
+.primary-menu>.menu-item-has-children:not(.hideshow) {
+    padding: 0 21px 0 50px;
+}
+
+/* gravatar is too large */
+.user-link img {
+	max-width: 24px;
+}
+
+/* logo */
+.site-header-container #site-logo .bb-logo img, 
+.site-header-container #site-logo .site-title img.bb-logo, 
+.site-title img.bb-mobile-logo {
+	max-height: 50px !important;
+}
+
+.site-title img {
+	min-height: 39px;
+}
+
+/* show logo on mobile */
+@media (max-width: 799px) {
+	h2.site-title a::before {
+		background-image: url("/wp-content/uploads/2022/11/r1-companies-v2-horizontal-01-1024x152.png");
+		width: 177px;
+		height: 30px;
+		display: inline-block;
+		content: '';
+		background-size: contain;
+    	background-repeat: no-repeat;
+		vertical-align: middle;
+	}
+	
+	h2.site-title a {
+		font-size: 0;
+	}
+}
+
+@media (min-width: 370px) and (max-width: 419px) {
+	h2.site-title a::before {
+		width: 130px;
+		height: 25px;
+	}
+}
+
+@media (max-width: 369px) {
+	h2.site-title a::before {
+		width: 130px;
+		height: 25px;
+	}
+	
+	.bb-mobile-header .header-aside {
+		padding-right: 0;
+	}
+	
+	.header-aside>*,
+	#header-notifications-dropdown-elem,
+	.mobile-logo-wrapper {
+		padding: 0;
+	}
+}
+/* -- HOMEPAGE -- */
+/* search */
+.custom-hero {
+	z-index: 0;
+}
+
+form.wp-block-search.hero-search {
+	transform: translateY(-30px);
+}
+
+input.wp-block-search__input {
+	border: 1px solid #CFCFCF;
+    line-height: 58px;
+    text-indent: 10px;
+    width: 100%;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-family: "Poppins",Sans-serif !important;
+    border-right: 0px;
+    color: #323232;
+    font-size: 14px;
+    background-color: #EBEBEB;
+	height: 56px;
+}
+
+input.wp-block-search__input:focus {
+	background-color: #ffffff !important;
+    border: 1px solid #72BF44 !important;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%), 0 0 8px rgb(114 191 68 / 60%);
+}
+
+button.wp-block-search__button {
+	border-radius: 0 5px 5px 0;
+	margin-left: 0;
+	padding: 7px 20px;
+}
+
+@media (max-width: 799px) {
+	.wp-block-search__inside-wrapper {
+		width: 80% !important;
+	}
+}
+
+/* hide page title */
+body header.entry-header {
+	display: none;
+}
+
+/* -- responsive -- */
+@media (max-width: 1180px) {
+	.custom-feature-grid .stk-row,
+	.news-and-quick-links-row .stk-row {
+		display: block;
+	}
+}
+
+/* --- TITLE PRE-LISTING PACKET --- */
+.custom-wp-form.wpforms-container-full {
+	margin: 0;
+}
+
+.custom-wp-form.wpforms-container-full .wpforms-form .wpforms-field-row.wpforms-field-medium {
+	max-width: 100%;
+}
+
+@media (max-width: 980px) {
+	.nav-col .stk-block-icon-label .stk-row {
+		flex-wrap: wrap;
+	}	
+}
+
+/* --- TRANSACTION TOOLBOX --- */
+.align-buttons-row .wp-block-stackable-column {
+	border-radius: 10px;
+}
+
+.align-buttons-row .stk-column-wrapper {
+	display: flex;
+}
+
+.align-buttons-row .wp-block-stackable-button-group {
+	margin-top: auto !important;
+}
+
+/* right column responsive */
+@media (min-width: 768px) and (max-width: 1090px) {
+	.right-col-content .stk-block-content .wp-block-stackable-columns .stk-inner-blocks {
+		display: block;
+	}	
+	
+	.right-col-content .stk-block-content .wp-block-stackable-columns .stk-inner-blocks .wp-block-stackable-column {
+		margin-bottom: 20px
+	}
+}
+
+/* disable Connect feature */
+.friendship-button { 
+	display: none !important;
+} 
+
+/* search form in main menu (titlebar) */
+/*#primary-menu,
+.primary-menu>li {
+	width: 100%;
+    max-width: 100%;
+}*/
+
+.primary-menu>li.menu-form,
+.primary-menu>li.menu-form input[type=search]{
+	width: 100%;
+    max-width: 100%;
+}
+
+#primary-menu {
+	width: 80%;
+    max-width: 100%;
+}
+
+.primary-menu>li.menu-form form {
+	float: left;
+    width: 100%;
+}
+
+.primary-menu>li.menu-form button:hover {
+	background-color: #66ac3d;
+}
+
+@media (max-width: 799px) {
+	.bb-mobile-panel-inner .mobile-menu>li.menu-form a {
+		display: flex;
+	}
+	
+	.bb-mobile-panel-inner .mobile-menu>li.menu-form input[type=search] {
+		max-width: 100%;
+    	width: 100%;
+	}
+	
+	.bb-mobile-panel-inner .mobile-menu>li.menu-form button {
+		height: 40px;
+	}
+}
+
+/* homepage news carousel */
+.homepage-slider .slick-list {
+	border-radius: 15px;
+}
+
+.homepage-slider .wppsac-post-content-position {
+	padding-right: 50px;
+}
+
+.wppsac-post-carousel.design-1 .wppsac-post-image-bg {
+	margin-bottom: 0;
+}
+
+.homepage-slider .wppsac-post-slider .slick-dots li.slick-active button, 
+.homepage-slider .wppsac-post-carousel .slick-dots li.slick-active button {
+	background: #73bf44 !important;
+	border: 2px solid #73bf44;
+}
+
+.homepage-slider .wppsac-post-slider .slick-dots li button, 
+.homepage-slider .wppsac-post-carousel .slick-dots li button {
+	border: 2px solid #73bf44;
+}
+
+.homepage-slider ul.slick-dots {
+	bottom: auto;
+}
+
+/* read more */
+.wppsac-post-carousel.design-1 a.wppsac-readmorebtn {
+	color: #72bf44;
+    border-color: #72bf44;
+	border-radius: 5px;
+}
+
+.wppsac-post-carousel.design-1 a.wppsac-readmorebtn:hover {
+	color: #fff;
+    background-color: #72bf44;
+}
+
+@media (min-width: 1120px) {
+	.homepage-slider.wppsac-wrap img.wppsac-post-image {
+		width: 510px;
+		min-width: 510px;
+	}
+	
+	.homepage-slider .slick-initialized .slick-slide {
+		display: flex;
+		justify-content: flex-start;
+		column-gap: 2em;
+		align-items: center;
+		background: #fff;
+		border-radius: 15px;
+		padding: 0 !important;
+	}
+}
+
+/* help desk float */
+#popmake-12118 img {
+	background: #fff;
+    padding: 10px;
+    border-radius: 100px;
+	box-shadow: 0px 4px 24px #0000000a;
+}
+
+.pum-theme-3230 #popmake-12118 .pum-content + .pum-close, 
+.pum-theme-content-only #popmake-12118 .pum-content + .pum-close {
+	top: -7px;
+	right: -5px;
+}
+
+/* home tile accordions */
+.tile-accordion .stk-inner-blocks li a::before{
+	content: url("/wp-content/uploads/2023/03/arrow-right.svg") !important;
+	display: inline-block;
+	width: 13px;
+	margin-right: 10px;
+}
+
+.tile-accordion .stk-inner-blocks li::marker {
+	content: '';
+}
+
+.tile-accordion .stk-column-wrapper {
+	padding: 0;
+}
+
+.tile-accordion .stk-block-content ul {
+	margin: 10px 0;
+}
+
+.tile-accordion .stk-container:not(.stk--no-background) {
+	box-shadow: none;
+}
+
+.tile-accordion .stk-inner-blocks li.has-small-font-size {
+	font-size: 15px;
+}
+
+.custom-feature-grid.single-col .empty {
+	visibility: hidden;
+}
+
+.custom-feature-grid details.tile-accordion {
+	padding-bottom: 0 !important;
+}
+
+@media (min-width: 1375px) and (max-width: 1575px) {
+	.custom-feature-grid h2.stk-block-heading__text {
+		font-size: 1.2rem;
+	}	
+}
+
+@media (min-width: 1235px) and (max-width: 1374px) {
+	.custom-feature-grid h2.stk-block-heading__text {
+		font-size: 1rem;
+		line-height: 24px;
+	}	
+	
+	.custom-feature-grid .stk-block-icon-label  h3.stk-block-heading__text {
+		font-size: 13px !important;
+	}
+	
+	.custom-feature-grid .wp-block-stackable-icon .stk--inner-svg svg:last-child:not(.ugb-custom-icon):not(.stk-custom-icon) {
+		width: 12px;
+	}
+}
+
+@media (min-width: 1181px) and (max-width: 1234px) {
+	.custom-feature-grid h2.stk-block-heading__text {
+		font-size: 0.9rem;
+		line-height: 24px;
+	}	
+	
+	.custom-feature-grid .stk-block-icon-label  h3.stk-block-heading__text {
+		font-size: 12px !important;
+	}
+	
+	.custom-feature-grid .wp-block-stackable-icon .stk--inner-svg svg:last-child:not(.ugb-custom-icon):not(.stk-custom-icon) {
+		width: 11px;
+	}
+	
+	.custom-feature-grid .wp-block-stackable-column .stk-block-column__content {
+		padding: 15px;
+	}
+	
+	.custom-feature-grid .wp-block-stackable-accordion summary .stk-block-column__content {
+		padding: 0;
+	}
+}
+
+@media (min-width: 181px) and (max-width: 1180px) {
+	.custom-feature-grid .wp-block-stackable-accordion summary .stk-block-icon-label .wp-block-stackable-heading {
+		float: left;
+	}
+}
